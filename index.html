@@ -40,10 +40,15 @@ $(document).ready(function(){
 		"<p>Losses: " + losses + "</p>" ;
 
 		document.querySelector('#scoreboard').innerHTML = html; 
+		
+		$("#img1").css( 'cursor','pointer' );
+		$("#img2").css( 'cursor','pointer' );
+		$("#img3").css( 'cursor','pointer' );
+		$("#img4").css( 'cursor','pointer' );
 	}
 
 	htmlUpdate();
-	$("#img1").click(function(){
+	$("#img1").click(function(){		
 		totalScore += randomValue1;
 	//	console.log("red diamond value: " + randomValue1);		
 		console.log(totalScore);
