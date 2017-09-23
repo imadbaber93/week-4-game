@@ -15,16 +15,18 @@
 6. if the goal is matched increment wins by 1
 7. if total score goes over the goal, increment losses by 1 -->
 
-<body>
+<body bgcolor="#4286f4">
 
 <script type="text/javascript">
 	
 	var randomValue1 = Math.floor((Math.random() * 12) + 1);
 	var randomValue2 = Math.floor((Math.random() * 12) + 1);
+	var randomValue3 = Math.floor((Math.random() * 12) + 1);
+	var randomValue4 = Math.floor((Math.random() * 12) + 1);
 	var totalScore = 0;
 	var wins = 0;
 	var losses = 0; 
-	var goal =  Math.floor((Math.random() * 50) + 19);
+	var goal =  Math.floor((Math.random() * 120) + 19);
 
 
 
@@ -43,7 +45,7 @@ $(document).ready(function(){
 	htmlUpdate();
 	$("#img1").click(function(){
 		totalScore += randomValue1;
-		console.log("red diamond value: " + randomValue1);		
+	//	console.log("red diamond value: " + randomValue1);		
 		console.log(totalScore);
 //need to have this in here to update totalscore after every click
 		htmlUpdate(); 
@@ -56,8 +58,10 @@ $(document).ready(function(){
 			htmlUpdate();
 			randomValue1 = Math.floor((Math.random() * 12) + 1);
 			randomValue2 = Math.floor((Math.random() * 12) + 1);
+			randomValue3 = Math.floor((Math.random() * 12) + 1);
+			randomValue4 = Math.floor((Math.random() * 12) + 1);
 	}
-		if (totalScore == goal){
+		if (totalScore === goal){
 			alert("you win!");
 			++wins;
 			totalScore = 0;
@@ -65,12 +69,14 @@ $(document).ready(function(){
 			htmlUpdate();
 			randomValue1 = Math.floor((Math.random() * 12) + 1);
 			randomValue2 = Math.floor((Math.random() * 12) + 1);
+			randomValue3 = Math.floor((Math.random() * 12) + 1);
+			randomValue4 = Math.floor((Math.random() * 12) + 1);
 	}
 	});
 
 	$("#img2").click(function(){
 		totalScore += randomValue2;
-		console.log("blue diamond value: " + randomValue2);
+	//	console.log("blue diamond value: " + randomValue2);
 		console.log(totalScore);
 
 		htmlUpdate();
@@ -83,8 +89,10 @@ $(document).ready(function(){
 			htmlUpdate();
 			randomValue1 = Math.floor((Math.random() * 12) + 1);
 			randomValue2 = Math.floor((Math.random() * 12) + 1);
+			randomValue3 = Math.floor((Math.random() * 12) + 1);
+			randomValue4 = Math.floor((Math.random() * 12) + 1);
 	}
-		if (totalScore == goal){
+		if (totalScore === goal){
 			alert("you win!");
 			++wins;
 			totalScore = 0;
@@ -92,6 +100,68 @@ $(document).ready(function(){
 			htmlUpdate();
 			randomValue1 = Math.floor((Math.random() * 12) + 1);
 			randomValue2 = Math.floor((Math.random() * 12) + 1);
+			randomValue3 = Math.floor((Math.random() * 12) + 1);
+			randomValue4 = Math.floor((Math.random() * 12) + 1);
+	}
+	});
+		$("#img3").click(function(){
+		totalScore += randomValue3;
+	//	console.log("yellow diamond value: " + randomValue3);
+		console.log(totalScore);
+
+		htmlUpdate();
+
+		if (totalScore > goal) {
+			alert("you lost!");
+			++losses;
+			totalScore = 0;
+			goal = Math.floor((Math.random() * 50) + 19)
+			htmlUpdate();
+			randomValue1 = Math.floor((Math.random() * 12) + 1);
+			randomValue2 = Math.floor((Math.random() * 12) + 1);
+			randomValue3 = Math.floor((Math.random() * 12) + 1);
+			randomValue4 = Math.floor((Math.random() * 12) + 1);
+	}
+		if (totalScore === goal){
+			alert("you win!");
+			++wins;
+			totalScore = 0;
+			goal = Math.floor((Math.random() * 50) + 19)
+			htmlUpdate();
+			randomValue1 = Math.floor((Math.random() * 12) + 1);
+			randomValue2 = Math.floor((Math.random() * 12) + 1);
+			randomValue3 = Math.floor((Math.random() * 12) + 1);
+			randomValue4 = Math.floor((Math.random() * 12) + 1);
+	}
+	});
+		$("#img4").click(function(){
+		totalScore += randomValue4;
+		//console.log("yellow diamond value: " + randomValue3);
+		console.log(totalScore);
+
+		htmlUpdate();
+
+		if (totalScore > goal) {
+			alert("you lost!");
+			++losses;
+			totalScore = 0;
+			goal = Math.floor((Math.random() * 50) + 19)
+			htmlUpdate();
+			randomValue1 = Math.floor((Math.random() * 12) + 1);
+			randomValue2 = Math.floor((Math.random() * 12) + 1);
+			randomValue3 = Math.floor((Math.random() * 12) + 1);
+			randomValue4 = Math.floor((Math.random() * 12) + 1);
+	}
+		if (totalScore === goal){
+			alert("you win!");
+			++wins;
+			totalScore = 0;
+			goal = Math.floor((Math.random() * 50) + 19)
+			htmlUpdate();
+			randomValue1 = Math.floor((Math.random() * 12) + 1);
+			randomValue2 = Math.floor((Math.random() * 12) + 1);
+			randomValue3 = Math.floor((Math.random() * 12) + 1);
+			randomValue4 = Math.floor((Math.random() * 12) + 1);
 	}
 	});
 });	
@@ -99,15 +169,20 @@ $(document).ready(function(){
 
 
 </script>
-
+<h1>Crystal Collector!</h1>
+<h2>Try to meet the goal number by clicking the different crystals which contain different random numbers. If you go over the number, than your losses will increment and everytime you match the number you wins will increment.
+<br>
+<br>
 <img id = "img1" src="images/red-diamond.jpg" height="100px" width="100px">
 <img id = "img2" src="images/blue diamond.png" height="100px" width="100px">
+<img id = "img3" src="images/yellow-diamond.jpg" height="100px" width="100px">
+<img id = "img4" src="images/green_diamond.jpg" height="100px" width="100px">
+
 
 <div id = scoreboard>
 <p>Wins: </p>
 <p>Losses: </p>
 </div>
-
-
+</h2>
 </body>
 </html>
